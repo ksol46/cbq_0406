@@ -68,7 +68,11 @@ public class controller extends HttpServlet {
 			site = "/search.jsp";
 			break;
 		case "/inquiry":
-			site = dao.search(request, response);
+			site = dao.getSearch(request, response);
+			break;
+		case "/stats":
+			site = dao.giveStatistics(request, response);
+			dao.total(request, response);
 			break;
 		}
 		

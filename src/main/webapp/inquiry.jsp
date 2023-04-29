@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="DTO.Reservation" %>
+<%
+request.setCharacterEncoding("utf-8");
+String resvno = (String) request.getAttribute("resvno");
+Reservation res = (Reservation) request.getAttribute("res");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +16,13 @@
 <body>
 	<%@ include file="topmenu.jsp" %>
 	<section>
-		<div class="title">예약번호: (__)의 접종예약조회</div>
-		<form name="frm" action="insert">
-			<input type="hidden" id="GUBUN" value="insert">
+	<% if (res == null) { %> 
+	<div class="title">접종예약정보가 존재하지 않습니다!</div>
+	<% } else { %>
+	<div class="title">예약번호: <%=resvno%> 의 접종예약조회</div>
+	<% } %>
 			<div class="wrapper">
+			<% if (res != null) { %>
 			<table border="1">
 				<tr>
 				<th>이름</th>
@@ -28,18 +37,19 @@
 				<th>백신종류</th>
 				</tr>
 				<tr>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
-				<td>(데이터)</td>
+				<td><%=res.getPname() %></td>
+				<td><%=res.getJumin() %></td>
+				<td><%=res.getGender() %></td>
+				<td><%=res.getTel()%></td>
+				<td><%=res.getResvdate() %></td>
+				<td><%=res.getResvtime()%></td>
+				<td><%=res.getHospname() %></td>
+				<td><%=res.getTel() %></td>
+				<td><%=res.getHospaddr() %></td>
+				<td><%=res.getVtype() %></td>
 				</tr>
 			</table>
+			<%} %>
 			</div>
 			<button class="btn btnstyle" type="button" onclick="location='search'">돌아가기</button>
 	</section>

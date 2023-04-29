@@ -3,7 +3,8 @@ package DTO;
 public class Stats {
 	String hospcode;
 	String hospname;
-	String count;
+	int count;
+	int total;
 	
 	public String getHospcode() {
 		return hospcode;
@@ -17,12 +18,20 @@ public class Stats {
 	public void setHospname(String hospname) {
 		this.hospname = hospname;
 	}
-	public String getCount() {
+	public int getCount() {
 		return count;
 	}
-	public void setCount(String count) {
+	public void setCount(int count) {
 		this.count = count;
 	}
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
+	
+	
 	
 	
 }

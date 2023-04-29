@@ -1,4 +1,4 @@
-function fn_submit (){
+function fn_submit_res (){
 	var fn = document.frm;
 	
 	if(fn.resvno.value ==""){
@@ -37,3 +37,14 @@ function fn_submit (){
 function fn_reset(){
 		alert("정보를 지우고 처음부터 다시 입력합니다!");
 	}
+	
+function fn_submit_inq(){
+	var fn = document.frm;
+	
+	if(fn.resvno.value =="" || fn.resvno.value ==null){
+		alert("예약번호가 입력되지 않았습니다.");
+		fn.resvno.focus();
+		return false;
+	}
+	fn.submit();
+}

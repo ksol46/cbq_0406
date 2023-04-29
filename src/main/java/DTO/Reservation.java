@@ -4,16 +4,14 @@ public class Reservation {
 	String resvno;
 	String pname;
 	String jumin;
+	String gender;
 	String tel;
-	String vcode;
-	String hospcode;
 	String hospname;
 	String hosptel;
 	String hospaddr;
 	String resvdate;
 	String resvtime;
 	String vtype;
-	
 	public String getResvno() {
 		return resvno;
 	}
@@ -32,23 +30,17 @@ public class Reservation {
 	public void setJumin(String jumin) {
 		this.jumin = jumin;
 	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	public String getTel() {
 		return tel;
 	}
 	public void setTel(String tel) {
 		this.tel = tel;
-	}
-	public String getVcode() {
-		return vcode;
-	}
-	public void setVcode(String vcode) {
-		this.vcode = vcode;
-	}
-	public String getHospcode() {
-		return hospcode;
-	}
-	public void setHospcode(String hospcode) {
-		this.hospcode = hospcode;
 	}
 	public String getHospname() {
 		return hospname;
@@ -86,5 +78,7 @@ public class Reservation {
 	public void setVtype(String vtype) {
 		this.vtype = vtype;
 	}
+	
+	
 	
 }

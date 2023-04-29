@@ -74,6 +74,7 @@ public class controller extends HttpServlet {
 			site = dao.giveStatistics(request, response);
 			dao.total(request, response);
 			break;
+			
 		}
 		
 		getServletContext().getRequestDispatcher("/"+site).forward(request, response);
